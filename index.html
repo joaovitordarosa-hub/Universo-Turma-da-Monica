@@ -1,0 +1,155 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIVERSO TURMA DA MÔNICA</title>
+    <!-- Conexão com o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body>
+
+  <!-- 1. BARRA DE NAVEGAÇÃO SUPERIOR -->
+<header class="navbar-topo">
+    <div class="navbar-container">
+        
+        <!-- Grupo da Esquerda: Logo + Pesquisa lado a lado -->
+        <div class="grupo-esquerda">
+            <div class="logo">
+                <span class="logo-universo">UNIVERSO</span>
+                <span class="logo-sub">TURMA DA MÔNICA</span>
+            </div>
+
+            <div class="busca-box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+                <input type="text" placeholder="Pesquisar" >
+            </div>
+        </div>
+
+        <!-- Grupo da Direita: Links do Menu -->
+        <nav class="menu-topo">
+            <a href="index.html" class="item-topo active">Início</a>
+            <a href="Cine Limoeiro.html" class="item-topo">Cine Limoeiro</a>
+            <a href="Personagens.html" class="item-topo">Personagens</a>
+            <a href="Jogos.html" class="item-topo">Jogos</a>
+            <a href="Missões.html" class="item-topo">Missões</a>
+            <a href="músicas.html" class="item-topo">Músicas</a>
+            <a href="Login ID.html" class="item-topo">Login ID</a>
+            <a href="meu perfil.html" class="item-topo">Perfil</a>
+        </nav>
+
+    </div>
+</header>
+
+        <!-- CONTAINER DO LAYOUT PRINCIPAL -->
+    <div class="layout-principal">
+
+        <!-- COLUNA DA ESQUERDA: CONTEÚDO PRINCIPAL -->
+        <main class="coluna-esquerda">
+    
+            <!-- TÍTULO DA SEÇÃO COM O ESTILO AMARELO PADRÃO -->
+            <h2 class="categoria-titulo">EXPLORAR UNIVERSO</h2>
+
+            <!-- GRADE DE CARDS -->
+            <div class="grade-filmes">
+
+                <article class="card-filme">
+                    <div class="capa-placeholder">
+                        <img src="imagem-1.jpg" alt="Descrição da imagem 1">
+                    </div>
+                    <div class="card-conteudo">
+                        <h3>Cine Limoeiro</h3>
+                        <p>Assista aos clássicos e animações da turminha.</p>
+                       <button class="btn-play" onclick="window.location.href='Cine Limoeiro.html'">Acessar</button>
+                    </div>
+                </article>
+
+                <article class="card-filme">
+                    <div class="capa-placeholder">
+                        <img src="imagem-2.jpg" alt="Descrição da imagem 2">
+                    </div>
+                    <div class="card-conteudo">
+                        <h3>Personagens</h3>
+                        <p>Conheça a ficha completa da turma do Bairro do Limoeiro.</p>
+                       <button class="btn-play" onclick="window.location.href='Personagens.html'">Acessar</button>
+
+                    </div>
+                </article>
+
+                <article class="card-filme">
+                    <div class="capa-placeholder">
+                        <img src="imagem-3.jpg" alt="Descrição da imagem 3">
+                    </div>
+                    <div class="card-conteudo">
+                        <h3>Jogos</h3>
+                        <p>Divirta-se com minigames e desafios interativos.</p>
+                       <button class="btn-play" onclick="window.location.href='Jogos.html'">Acessar</button>
+
+                    </div>
+                </article>
+
+                <article class="card-filme">
+                    <div class="capa-placeholder">
+                        <img src="imagem-4.jpg" alt="Descrição da imagem 4">
+                    </div>
+                    <div class="card-conteudo">
+                        <h3>Missões</h3>
+                        <p>Complete tarefas e desbloqueie recompensas exclusivas.</p>
+                       <button class="btn-play" onclick="window.location.href='Missões.html'">Acessar</button>
+                    </div>
+                </article>
+
+            </div>
+        </main>
+            
+    </div>
+
+ <!-- Exemplo de como deve ficar dentro do meu rodapé -->
+<footer class="rodape">
+
+    <div class="rodape-container">
+
+        <div class="rodape-logo">
+            <h2>UNIVERSO TURMA DA MÔNICA</h2>
+        </div>
+
+        <div class="rodape-conteudo">
+
+            <div class="rodape-coluna">
+                <h3>Navegação</h3>
+                <a href="index.html">Início</a>
+                <a href="Cine Limoeiro.html">Cine Limoeiro</a>
+                <a href="#">Almanaques</a>
+                <a href="meu perfil.html">meu perfil</a>
+                <a href="Jogos.html">Jogos</a>
+                <a href="https://www.lojinhadamonica.com.br">lojinha da mônica</a>
+            </div>
+
+            <div class="rodape-coluna">
+                <h3>Informações</h3>
+                <a href="História.html">História do projeto</a>
+                <a href="#">Central de ajuda</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Acessibilidade</a>
+            </div>
+
+        </div>
+
+        <div class="rodape-copyright">
+         
+            <p>
+            © 2026 João Vitor da Rosa — Projeto autoral sem fins lucrativos, desenvolvido exclusivamente para fins de estudo e portfólio.
+            Turma da Mônica e seus personagens são marcas registradas da MSP ESTÚDIOS. Este site não possui vínculo oficial.
+
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
