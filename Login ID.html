@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Universo Turma da Mônica</title>
+  <link href="index.html" rel="stylesheet">
+  <style>
+    :root {
+      --vermelho-monica: #E62E2D;
+      --verde-cebolinha: #28A745;
+      --amarelo-magali: #FFD100;
+      --azul-bidu: #009FE3;
+      --preto-contorno: #1A1A1A;
+      --fundo-gibi: #FFFDF5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Fredoka', sans-serif;
+      background-color: var(--azul-bidu);
+      /* Padrão de retícula de gibi no fundo */
+      background-image: radial-gradient(#0077B6 2px, transparent 2px);
+      background-size: 20px 20px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .quadrinho-card {
+      background-color: var(--fundo-gibi);
+      border: 4px solid var(--preto-contorno);
+      border-radius: 16px;
+      box-shadow: 10px 10px 0px var(--preto-contorno);
+      max-width: 400px;
+      width: 100%;
+      padding: 32px 28px;
+      position: relative;
+    }
+
+    /* Etiqueta no topo estilo capa de gibi */
+    .etiqueta-gibi {
+      position: absolute;
+      top: -18px;
+      left: 24px;
+      background-color: var(--amarelo-magali);
+      color: var(--preto-contorno);
+      font-family: 'Comic Neue', cursive;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 4px 14px;
+      border: 3px solid var(--preto-contorno);
+      border-radius: 8px;
+      transform: rotate(-2deg);
+      box-shadow: 3px 3px 0px var(--preto-contorno);
+    }
+
+    /* Balão de fala */
+    .balao-fala {
+      background: #FFFFFF;
+      border: 3px solid var(--preto-contorno);
+      border-radius: 20px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+      position: relative;
+      text-align: center;
+    }
+
+    .balao-fala::after {
+      content: '';
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 14px 14px 0;
+      border-style: solid;
+      border-color: var(--preto-contorno) transparent transparent;
+    }
+
+    .balao-fala::before {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 11px 11px 0;
+      border-style: solid;
+      border-color: #FFFFFF transparent transparent;
+      z-index: 1;
+    }
+
+    .balao-fala h1 {
+      font-size: 2.5rem;
+      color: var(--vermelho-monica);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .balao-fala p {
+      font-family: 'Comic Neue', cursive;
+      font-size: 1rem;
+      color: var(--preto-contorno);
+      margin-top: 4px;
+    }
+
+    .campo-grupo {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--preto-contorno);
+      font-size: 0.95rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      border: 3px solid var(--preto-contorno);
+      border-radius: 10px;
+      background-color: #FFFFFF;
+      outline: none;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+
+    input:focus {
+      background-color: #FFF9DB;
+      box-shadow: 4px 4px 0px var(--preto-contorno);
+      transform: translate(-2px, -2px);
+    }
+
+    .btn-entrar {
+      width: 100%;
+      padding: 14px;
+      margin-top: 8px;
+      background-color: var(--vermelho-monica);
+      color: #FFFFFF;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 3px solid var(--preto-contorno);
+      border-radius: 12px;
+      box-shadow: 5px 5px 0px var(--preto-contorno);
+      cursor: pointer;
+      transition: all 0.1s ease;
+    }
+
+    .btn-entrar:hover {
+      background-color: #D32221;
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px var(--preto-contorno);
+    }
+
+    .btn-entrar:active {
+      transform: translate(3px, 3px);
+      box-shadow: 1px 1px 0px var(--preto-contorno);
+    }
+
+    .links-rodape {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Comic Neue', cursive;
+      font-size: 0.9rem;
+    }
+
+    .links-rodape a {
+      color: var(--preto-contorno);
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 2px solid var(--verde-cebolinha);
+    }
+
+  </style>
+</head>
+<body>
+
+  <main class="quadrinho-card">
+
+    <div class="balao-fala">
+      <h1> Universo Turma da Mônica</h1>
+    </div>
+
+   <form id="form-login">
+  <div class="campo-grupo">
+    <label for="usuario">Apelido ou E-mail</label>
+    <input type="text" id="usuario" placeholder="Ex: monica" required>
+  </div>
+
+  <div class="campo-grupo">
+    <label for="senha">Senha Secreta</label>
+    <input type="password" id="senha" placeholder="••••••••" required>
+  </div>
+
+  <!-- Mensagem de erro oculta inicialmente -->
+  <p id="mensagem-erro" style="color: #E62E2D; font-weight: bold; margin-bottom: 12px; display: none; text-align: center;">
+    Ops! Senha errada, coelhada neles!
+  </p>
+
+  <button type="submit" class="btn-entrar">Entrar no Limoeiro!</button>
+</form>
+
+
+    <div class="links-rodape">
+      <a href="#">Esqueci a senha!</a>
+      <a href="#">Criar conta nova</a>
+    </div>
+  </main>
+
+<script>
+const formulario = document.getElementById('form-login');
+const mensagemErro = document.getElementById('mensagem-erro');
+
+formulario.addEventListener('submit', function(evento) {
+    evento.preventDefault();
+
+    const usuarioDigitado = document.getElementById('usuario').value.trim().toLowerCase();
+    const senhaDigitada = document.getElementById('senha').value;
+
+    const USUARIO_CORRETO = "monica";
+    const SENHA_CORRETA = "sansao";
+
+    if (usuarioDigitado === USUARIO_CORRETO && senhaDigitada === SENHA_CORRETA) {
+
+        mensagemErro.style.display = "none";
+
+        // Redirecionar para a página inicial
+        window.location.href = "index.html";
+
+    } else {
+
+        mensagemErro.style.display = "block";
+        mensagemErro.textContent = "Usuário ou senha incorretos!";
+    }
+});
+</script>
+
+</body>
+</html>

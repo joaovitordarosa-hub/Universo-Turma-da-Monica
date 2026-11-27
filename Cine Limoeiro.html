@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINE LIMOEIRO</title>
+  
+  <!-- Fontes estilo quadrinhos -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Arquivos CSS -->
+  <link rel="stylesheet" href="Cine Limoeiro.css">
+  <link rel="stylesheet" href="Cine Limoeiro.css">
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">CINE LIMOEIRO</a>
+    
+    <div class="busca-box">
+      <input type="text" id="campoBusca" placeholder="Qual história você quer ver ?">
+    </div>
+
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="#">Almanaques</a>
+      <a href="#">Minha Pilha</a>
+      </nav>
+
+  </header>
+
+    <section class="secao-ao-vivo">
+  <div class="card-canal-vivo">
+    
+    <!-- Cabeçalho do Canal -->
+    <div class="canal-topo">
+      <div class="badge-ao-vivo">
+        <span class="ponto-vermelho"></span> AO VIVO • TV LIMOEIRO
+      </div>
+    </div>
+
+    <!-- Área Principal (Player + Grade) -->
+    <div class="canal-conteudo">
+      <div class="player-container">
+        <!-- Vídeo sem controles tradicionais para parecer TV ao vivo -->
+        <video id="tv-stream" autoplay muted playsinline></video>
+        <div class="player-container">
+</div>
+        <!-- Botão para ativar o som (navegadores bloqueiam som automático) -->
+        <button id="btn-som" class="btn-som-tv">🔇 Clique para ativar o som</button>
+      </div>
+
+      <!-- Informações do que está passando -->
+      <div class="canal-info">
+        <span class="tag-programa">PASSANDO AGORA</span>
+        <h2 id="titulo-desenho">Cine Gibi 2</h2>
+        <p id="descricao-desenho">Aguarde o sinal da TV Limoeiro.</p>
+        
+        <div class="proximo-programa">
+          <strong>A seguir: A Princesa e o Robô </strong> <span id="proximo-titulo"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <main class="container">
+    <!-- Destaque Principal -->
+    <section class="destaque-quadro">
+      <div class="destaque-info">
+        <span class="etiqueta-gibi">★ Edição Especial</span>
+        <h1>Uma Aventura no Tempo</h1>
+        <p>Quando o plano do Franjinha dá errado, os quatro elementos se espalham e a turma precisa viajar por diferentes épocas para salvar o dia!</p>
+        <button class="btn-play" onclick="abrirModal('Uma Aventura no Tempo', '2004 • Animação • 1h 20m', 'A máquina do tempo do Franjinha sofre um acidente e espalha os elementos Fogo, Água, Terra e Ar. Mônica, Cebolinha, Cascão e Magali precisam recuperá-los!')">▶ Dar o Play!</button>
+      </div>
+      <div class="destaque-imagem">
+       <img src="" alt="">
+      </div>
+    </section>
+
+    <!-- Fileira 1 -->
+    <h2 class="categoria-titulo">Clássicos da Fita VHS</h2>
+    
+    <div class="grade-filmes" id="listaFilmes">
+      <!-- Card 1 -->
+      <article class="card-filme" data-titulo="Cine Gibi: O Filme">
+        <span class="onomatopeia">ZUM!</span>
+        <div class="capa-placeholder">Capa do Filme 1</div>
+        <div class="card-conteudo">
+          <h3>Cine Gibi: O Filme</h3>
+          <p>2004 • Animação • 1h 10m</p>
+          <button class="btn-play" onclick="abrirModal('Cine Gibi: O Filme', '2004 • Animação • 1h 10m', 'Franjinha inventa um projetor gigante que transforma revistas em quadrinhos em filmes na telona!')">▶ Dar o Play!</button>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card-filme" data-titulo="A Princesa e o Robô">
+        <span class="onomatopeia">PLIM!</span>
+        <div class="capa-placeholder">Capa do Filme 2</div>
+        <div class="card-conteudo">
+          <h3>A Princesa e o Robô</h3>
+          <p>1984 • Clássico • 1h 30m</p>
+          <button class="btn-play" onclick="abrirModal('A Princesa e o Robô', '1984 • Clássico • 1h 30m', 'No espaço sideral, o robôzinho Rodolfo se apaixona pela Princesa Mimi e precisa enfrentar o vilão Lorde Coelhão.')">▶ Dar o Play!</button>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card-filme" data-titulo="As Doze Badaladas">
+        <span class="onomatopeia">POW!</span>
+        <div class="capa-placeholder">Capa do Filme 3</div>
+        <div class="card-conteudo">
+          <h3>As Doze Badaladas</h3>
+          <p>1987 • Especial • 55m</p>
+          <button class="btn-play" onclick="abrirModal('As Doze Badaladas', '1987 • Especial • 55m', 'Uma versão super divertida da história da Cinderela estrelada pela turma do Bairro do Limoeiro.')">▶ Dar o Play!</button>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="card-filme" data-titulo="O Bicho-Papão">
+        <span class="onomatopeia">TUM!</span>
+        <div class="capa-placeholder">Capa do Filme 4</div>
+        <div class="card-conteudo">
+          <h3>O Bicho-Papão</h3>
+          <p>1989 • Aventura • 45m</p>
+          <button class="btn-play" onclick="abrirModal('O Bicho-Papão', '1989 • Aventura • 45m', 'Histórias clássicas de sustos engraçados com o Penadinho, Frank e toda a turma do cemitério.')">▶ Dar o Play!</button>
+        </div>
+      </article>
+    </div>
+
+    <p id="mensagemVazia" class="mensagem-vazia" style="display: none;">
+      Ops! Parece que o Cebolinha escondeu esse filme... Tente buscar outro nome!
+    </p>
+  </main>
+
+  <!-- Modal Estilo Balão de HQ -->
+  <div id="modalGibi" class="modal-fundo">
+    <div class="modal-balao">
+      <button class="btn-fechar" onclick="fecharModal()">X</button>
+      <h2 id="modalTitulo">Título do Filme</h2>
+      <span id="modalInfo" class="etiqueta-gibi">Ano • Gênero</span>
+      <p id="modalSinopse">Sinopse do filme aqui...</p>
+      <a href="#" class="btn-play">▶ Assistir Agora!</a>
+    </div>
+  </div>
+
+  <!-- Arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+:root {
+  --papel-gibi: #FAF6EB;
+  --vermelho-monica: #E62E2D;
+  --amarelo-magali: #FFD100;
+  --azul-sansao: #3B82F6;
+  --preto-tinta: #1A1A1A;
+    --azul-bidu: #009FE3;
+}
+
+* {
+ 
+  margin: 0;
+  
+}
+
+body {
+    background-color: var(--azul-bidu);;
+    background-image: radial-gradient(#0077B6 2px, transparent 2px);
+    background-size: 40px 40px;
+  font-family: 'comic sans MS', black;
+  padding-bottom: 50px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--amarelo-magali);
+  border-bottom: 4px solid var(--preto-tinta);
+  padding: 10px 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-family:'Comic Sans MS',black ;
+  font-size: 2.5rem;
+  color: var(--preto-tinta);
+  letter-spacing: 2px;
+  -webkit-text-stroke: 1.5px var(--preto-tinta);
+  text-decoration: none;
+}
+
+.busca-box input {
+  padding: 8px 15px;
+  border: 3px solid var(--preto-tinta);
+  border-radius: 20px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  width: 260px;
+  box-shadow: 3px 3px 0px var(--preto-tinta);
+  outline: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--preto-tinta);
+  font-weight: 700;
+  margin-left: 20px;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  text-decoration: underline wavy var(--vermelho-monica);
+}
+
+/* Container Principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Banner Destaque */
+.destaque-quadro {
+  width: 460px;
+  height: 460px;
+  display: flex;
+  margin-top: 30px;
+  background-color: #FFFDF7;
+  border: 4px solid var(--preto-tinta);
+  box-shadow: 8px 8px 0px var(--preto-tinta);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  gap: 30px;
+}
+
+.destaque-info {
+  flex: 1;
+}
+
+.destaque-imagem {
+  width: 120px;                /* Largura da caixa amarela */
+  height: 120px;               /* Altura da caixa amarela */
+  max-width: 95%;    /* Impede que a foto ultrapasse o quadro */
+  max-height: 95%;   /* Impede que a foto ultrapasse a altura */
+  margin: 0 auto;              /* Centraliza o card na tela */
+  background-color: #f9d100; /* Mesmo tom de amarelo do fundo da foto */
+  border: 3px solid #000000; /* Borda preta igual ao seu desenho */
+  border-radius: 8px;          /* Cantos levemente arredondados */
+  overflow: hidden;            /* Garante que nada saia para fora da borda */
+  display: flex;
+  align-items: center;         /* Centraliza na vertical */
+  justify-content: center;     /* Centraliza na horizontal */
+  width: 100%;
+  height: 100%;
+  object-fit: contain;         /* Ajusta a foto inteira dentro da caixa sem cortar */
+}
+
+.etiqueta-gibi {
+  display: inline-block;
+  background-color: var(--azul-sansao);
+  color: white;
+  font-weight: 700;
+  padding: 4px 12px;
+  border: 2px solid var(--preto-tinta);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.destaque-info h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.destaque-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Botões Estilo Gibi */
+.btn-play {
+  display: inline-block;
+  background-color: var(--vermelho-monica);
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border: 3px solid var(--preto-tinta);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px var(--preto-tinta);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.btn-play:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--preto-tinta);
+}
+
+.btn-play:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--preto-tinta);
+}
+
+/* Títulos das Categorias */
+.categoria-titulo {
+  font-size: 1.6rem;
+  margin: 40px 0 20px 0;
+  display: inline-block;
+  background-color: var(--amarelo-magali);
+  padding: 5px 15px;
+  border: 3px solid var(--preto-tinta);
+  box-shadow: 4px 4px 0px var(--preto-tinta);
+  transform: rotate(-1deg);
+}
+
+/* Grade de Filmes */
+.grade-filmes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.card-filme {
+  background-color: white;
+  border: 3px solid var(--preto-tinta);
+  box-shadow: 6px 6px 0px var(--preto-tinta);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.card-filme:hover {
+  transform: translateY(-6px) rotate(1deg);
+}
+
+.onomatopeia {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--amarelo-magali);
+  color: var(--vermelho-monica);
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  padding: 2px 10px;
+  border: 2px solid var(--preto-tinta);
+  border-radius: 50%;
+  transform: rotate(12deg) scale(0);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+
+.card-filme:hover .onomatopeia {
+  transform: rotate(12deg) scale(1);
+}
+
+.capa-placeholder {
+  width: 100%;
+  height: 280px;
+  background-color: #E5E0D8;
+  border-bottom: 3px solid var(--preto-tinta);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #666;
+}
+
+.capa-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-conteudo {
+  padding: 15px;
+}
+
+.card-conteudo h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.card-conteudo p {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.btn-card {
+  width: 100%;
+  background-color: var(--vermelho-monica);
+  color: white;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  padding: 8px;
+  border: 2px solid var(--preto-tinta);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn-card:hover {
+  background-color: #000000;
+}
+
+.mensagem-vazia {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border: 3px dashed var(--preto-tinta);
+  border-radius: 10px;
+}
+
+/* Modal (Janela Pop-up) */
+.modal-fundo {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-balao {
+  background-color: #FFFDF7;
+  border: 4px solid var(--preto-tinta);
+  box-shadow: 10px 10px 0px var(--amarelo-magali);
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+}
+
+.modal-balao h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.modal-balao p {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin: 15px 0 25px 0;
+}
+
+.btn-fechar {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background-color: var(--vermelho-monica);
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: 38px;
+  height: 38px;
+  border: 3px solid var(--preto-tinta);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* css responsivo */
+
+/* Tablets (até 900px) */
+@media (max-width: 900px) {
+  .destaque-quadro {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .destaque-imagem {
+    width: 100%;
+    height: 220px;
+  }
+
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Celulares (até 600px) */
+@media (max-width: 600px) {
+  .logo {
+    font-size: 2rem;
+  }
+
+  .busca-box {
+    width: 100%;
+    order: 3;
+  }
+
+  .busca-box input {
+    width: 100%;
+  }
+
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  nav a {
+    margin-left: 0;
+    font-size: 1rem;
+  }
+
+  .destaque-quadro {
+    padding: 20px;
+  }
+
+  .destaque-info h1 {
+    font-size: 1.7rem;
+  }
+
+  .categoria-titulo {
+    font-size: 1.3rem;
+  }
+
+  /* 2 colunas no celular para parecer página de gibi */
+  .grade-filmes {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .capa-placeholder {
+    height: 200px;
+  }
+
+  .card-conteudo {
+    padding: 10px;
+  }
+
+  .card-conteudo h3 {
+    font-size: 1rem;
+  }
+}
